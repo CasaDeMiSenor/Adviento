@@ -57,7 +57,7 @@ const {
   data: videos,
   pending,
   error,
-} = await useFetch<AdventVideo[]>("/api/2025/videos");
+} = await useFetch<AdventVideo[]>("/data/2025-videos.json");
 
 // Load sort order from localStorage or default to "order"
 const sortOrder = ref<"recent" | "order">("order");

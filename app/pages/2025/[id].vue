@@ -53,7 +53,9 @@ import type { AdventVideo } from "~/types/video";
 const route = useRoute();
 const videoSlug = computed(() => route.params.id as string);
 
-const { data: videos } = await useFetch<AdventVideo[]>("/api/2025/videos");
+const { data: videos } = await useFetch<AdventVideo[]>(
+  "/data/2025-videos.json"
+);
 const video = computed(() =>
   videos.value?.find((v) => v.slug === videoSlug.value)
 );
